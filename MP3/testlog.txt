@@ -1,0 +1,28 @@
+Test 1: Have 10 processes (VMs) join the group, and display the membership lists at each process, both halfway along the way and finally. [4%] (same as MP2)
+Test 2: Insert several files (from any server)--at least 10 files should be inserted--and immediately after the write is completed, read one file (file and reader process selected randomly by the TA, reader should be different from writer). Then display the file using more/less and compare the file sizes between the local copy (from which it was initially inserted)  and the SDFS-fetched copy. [8%]
+Test 3: Show (by using the “ls sdfsfilename” command, and “store” command at all processes) that the files above (a few randomly selected by TAs) are replicated exactly the right number of times in the cluster. [4%]
+
+Test 7: Delete a file by using “delete sdfsfilename”, and from a different client (picked randomly by TA) get that same file (it should output something like “the file is not available” ).[8%]
+
+--------------------- TODO ----------------------
+Have a set of files available (in local file systems or NFS) so that any client (VM) can insert them into the SDFS. Pick any dataset you want, but don’t pick files that are too small or that are too large or that contain repeated characters. (a few MBs for each file is ok). One option is to start with the datasets at the web-caching.com website: http://www.web-caching.com/traces-logs.html. For testing purposes, you could also generate your own files by using (file size will be count megabytes) dd if=/dev/urandom of=filename bs=1024*1024 count=2 
+
+
+Test 4: TA will pick a (small) file (different from Test 2) and ask you to insert, and then fail (Ctrl-C or kill, not leave) two of its replicas. Then do a “get” on the same file, and display the file using more/less and compare the file sizes of the local copy and SDFS copy. [4%]
+Test 5: After a while, you need to show (via the “ls sdfsfilename” command, and the “store” command) that the file above has been re-replicated according to the replication factor that you chose to tolerate up to 3 failures. [4%].
+
+Test 6: The TA will pick two (small) files and ask you to "put" them from different machines (picked randomly by the TA) with the same "sdfsfilename.foo.*" The two writes will be seconds apart from each other. The second put should raise a confirmation prompt. The TA will ask you to reject or ignore the second update using this prompt. [8%]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
